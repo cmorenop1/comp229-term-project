@@ -372,3 +372,8 @@ input[type="email"] {
 .chart {
   width : 30%;
 }
+
+.header-username{   
+    display: inline-flex;
+    align-content: center;  
+}

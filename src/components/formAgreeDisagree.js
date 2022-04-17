@@ -39,7 +39,7 @@ const AgreeDisagree = ({ surveyTitle, surveyId }) => {
 
     axios
       .post(
-        `http://surveymeanbackend.herokuapp.com/question/addsingle/${surveyId}`,
+        `https://surveymeanbackend.herokuapp.com/question/addsingle/${surveyId}`,
         body,
         {
           headers: headers,

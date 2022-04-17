@@ -20,16 +20,20 @@ const SurveyElement = ({ surveyTitle, id, surveyType }) => {
 
   function deleteSurvey() {
     const token = localStorage.getItem('token')
+    const currentUser = localStorage.getItem('username')
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     }
 
-    const body = {}
+    //! sending current user to the backend
+    const body = {
+      currentUser: currentUser
+    }
 
     axios
       .delete(
-        `http://surveymeanbackend.herokuapp.com/survey/delete/${id}`,
+        `https://surveymeanbackend.herokuapp.com/survey/delete/${id}`,
         body,
         {
           headers: headers,
@@ -55,11 +59,12 @@ const SurveyElement = ({ surveyTitle, id, surveyType }) => {
                 Take{' '}
               </button>
             </td>
+            {/* //! HIDE BUTTTON 
             <td>
               <button className="btn" onClick={editSurvey}>
                 Edit
               </button>
-            </td>
+            </td> */}
             <td>
               <button className="btn-add" onClick={addQuestions}>
                 Add

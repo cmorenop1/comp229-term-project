@@ -19,7 +19,6 @@ export const SignupView = () => {
     }
 
     const [confirmPassword, setConfirmPassword] = useState({ confirmPassword: '' });
-
     const [form, setForm] = useState(emptyForm);
 
     const handleChange = (evt) => {

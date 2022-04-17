@@ -18,6 +18,7 @@ const CreateSurvey = () => {
   const navigate = useNavigate()
 
   function processSave() {
+    const username = localStorage.getItem('username')
     const agreeDisagreeValue = agreeDisagreeRadioButtonRef.current.checked
     const multipleChoiceValue = multipleChoiceRadioButtonRef.current.checked
 
@@ -35,6 +36,7 @@ const CreateSurvey = () => {
         status: 'not active',
         startDate: format(startDate, 'mm-dd-yy'),
         endDate: format(endDate, 'mm-dd-yy'),
+        username: username,
       }
     }
     if (multipleChoiceValue) {
@@ -44,6 +46,7 @@ const CreateSurvey = () => {
         status: 'not active',
         startDate: format(startDate, 'mm-dd-yy'),
         endDate: format(endDate, 'mm-dd-yy'),
+        username: username,
       }
     }
   }

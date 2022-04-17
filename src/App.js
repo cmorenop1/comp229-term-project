@@ -12,6 +12,7 @@ import { SignupView } from './views/SignupView';
 import SurveyDetails from './views/SurveyDetails';
 import AddQuestions from './views/AddQuestionsView'
 import PreviewSurvey from './views/PreviewSurvey'
+import ProfileView from './views/ProfileView';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
         <Route path='/surveys/:id' element={token ? <SurveyDetails /> : <Navigate to="/" replace />} />
         <Route path='/surveys/preview/:id' element={token ? <PreviewSurvey /> : <Navigate to="/" replace />} />
         <Route path='/addQuestions' element={token ? <AddQuestions /> : <Navigate to="/" replace />} />
-
+        <Route path='/profile' element={token ? <ProfileView /> : <Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </Router>
